@@ -1,18 +1,15 @@
 <?php
-echo
-'
+echo'
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Servico Fácil</title>
     <link rel="StyleSheet" type="text/css" href="css/reset.css">
+    <link rel="StyleSheet" type="text/css" href="css/style.css">
 </head>
-
-
+<body>
 <header>
   Serviço Fácil
-</header>
-<body>';
+</header>';
  ?>

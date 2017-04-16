@@ -13,7 +13,7 @@
   $verifica = DBRead($table, $params, $fields);
 
   if (!$verifica){
-    echo"<script language='javascript' type='text/javascript'>alert('Login e/ou senha incorretos');window.location.href='index.php';</script>";
+    echo"<script language='javascript' type='text/javascript'>alert('Login e/ou senha incorretos');window.location.href='../index.php';</script>";
     die();
   }else{
     setcookie("login",$login);

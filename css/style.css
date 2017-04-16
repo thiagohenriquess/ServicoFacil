@@ -1,0 +1,30 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+header,
+nav,
+footer,
+article div,
+aside div,
+HTML {
+    background-color: Aqua;
+    text-align: center;
+    margin: 30px;
+}
+HEADER {
+    text-align: center;
+    font-size: 48px;
+}
+MAIN {
+    display: table;
+    margin: 0 auto 0 auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+FOOTER {
+    margin-bottom: 20px;
+    margin-left: 0px;
+    padding: 0px;
+}
