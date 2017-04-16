@@ -3,9 +3,9 @@
 $login = $_POST['login'];
 $senha = $_POST['senha'];
 
-require '../config.php';
-require '../connection.php';
-require '../database.php';
+require '../db/config.php';
+require '../db/connection.php';
+require '../db/database.php';
 
 $array = array(
   'login' => "$login",

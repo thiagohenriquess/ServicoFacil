@@ -21,4 +21,25 @@
     return DBExecute($query);
   }
 
+  //Ler registros
+  function DBRead($table, $params = null, $fields = '*'){
+    $params = ($params) ? " $params" : null;
+
+    $query = "SELECT {$fields} FROM {$table}{$params}";
+    $result = DBExecute($query);
+
+    if(mysqli_num_rows($result)){
+
+      while($var = mysqli_fetch_assoc($result)){
+          $data[] = $var;
+      }
+      return $data;
+    }
+    else{
+      return null;
+    }
+
+    return $result;
+  }
+
  ?>
