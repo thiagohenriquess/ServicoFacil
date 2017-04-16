@@ -10,15 +10,19 @@
 <body>
     <?php
     include 'php/header.php';
+    require 'config.php';
+    require 'connection.php';
+    require 'database.php';
     ?>
     <main>
-      <h2> Login </t2><br>
-      <form action="painel.php" method="post">
+      <h2> Login </h2><br>
+      <form action="login.php" method="post">
         <input type="text" name="login" id="login"><br>
         <input type="password" name="senha" id="senha"><br>
         <input type="submit" value="Entrar" name="entrar" id="entrar">
-      </form><br>
-      <a href="cadastro.html">Cadastre-se</a>
+      </form>
+      <a href="cadastro_form.php">Cadastre-se</a>
+
     </main>
     <?php
       include 'php/footer.php';
