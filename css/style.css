@@ -1,30 +1,47 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-header,
-nav,
-footer,
-article div,
-aside div,
-HTML {
-    background-color: Aqua;
-    text-align: center;
-    margin: 30px;
+body{
+  background-color: gainsboro;
 }
-HEADER {
-    text-align: center;
-    font-size: 48px;
+body #container{
+  background-color: white;
+  margin: 0 auto;
+  border: 1px solid gray;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 3px 3px 5px #333;
+   -webkit-box-shadow: 3px 3px 5px #333;
+   -moz-box-shadow: 3px 3px 5px #333;
 }
-MAIN {
-    display: table;
-    margin: 0 auto 0 auto;
-    margin-top: 20px;
-    margin-bottom: 30px;
+#titulo{
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: black;
+  text-shadow: 3px 3px 2px gray;
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
 }
-FOOTER {
-    margin-bottom: 20px;
-    margin-left: 0px;
-    padding: 0px;
+footer{
+  margin-top: 17%;
+  text-align: center;
+}
+#formServ{
+  margin-left: 40%;
+  margin-right: 35%;
+}
+#caixaTipo{
+  width: 295px;
+}
+#caixaSelecao{
+  width: 400px;
+}
+.menu{
+  width: 13%;
+  height: 84%;
+  position: absolute;
+  margin-top: -3%;
+  background-color: gainsboro;
+  border-right: 1px solid white;
+  border-top: 1px solid white;
 }
