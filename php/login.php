@@ -1,7 +1,7 @@
 <?php
   $login = $_POST['login'];
   $entrar = $_POST['entrar'];
-  $senha = ($_POST['senha']);
+  $senha = md5($_POST['senha']);
 
   require '../db/config.php';
   require '../db/connection.php';
