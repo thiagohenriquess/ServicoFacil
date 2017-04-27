@@ -1,16 +1,18 @@
 <?php
+
   //Executa query
-  function DBExecute ($query){
+  function DBExecute ($query, &$id = null){
     $db = DBConnect();
     $result = @mysqli_query( $db , $query) or die(mysqli_error($db));
 
+    $id = @mysqli_insert_id( $db );
 
     DBClose($db);
     return $result;
   }
 
   //grava registro
-  function DBInsert($table, array $data){
+  function DBInsert($table, array $data, &$id = null){
     $data = DBEscape($data);
 
     $fields = implode(',', array_keys($data));
@@ -18,7 +20,7 @@
 
     $query = "INSERT INTO {$table} ( {$fields} ) VALUES ({$values})";
 
-    return DBExecute($query);
+    return DBExecute($query,$id);
   }
 
   //Ler registros
@@ -41,5 +43,22 @@
 
     return $result;
   }
+
+  //Altera dados
+  function DBUpdate($table, array $data, $where = null){
+
+      foreach ($data as $key => $value) {
+        $fields[] = "{$key} = '{$value}'";
+      }
+
+      $fields = implode(', ', $fields);
+
+      $where = ($where) ? " WHERE {$where}" : null;
+
+      $query = "UPDATE {$table} SET {$fields}{$where}";
+      $result = DBExecute($query);
+      return $result;
+  }
+
 
  ?>
