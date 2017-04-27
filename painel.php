@@ -1,13 +1,14 @@
 <?php
   include 'php/header.php';
+  include 'php/menu.php';
 ?>
-<main>
+<main id="container">
   <?php
     if (isset($_GET['login'])){
       $login = $_GET['login'];
     }
     else{
-      $login = 'aa';
+      $login = 'Usuário';
     }
     echo 'Olá '.$login;
     setcookie('login',$login, (time() + (2 * 3600 * 24)));
