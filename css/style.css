@@ -40,6 +40,12 @@ main{
   text-shadow: 3px 3px 2px gray;
   border-bottom: 2px solid white;
 }
+.logout{
+  width: 100px;
+  float: right;
+  margin-right: 100px;
+  font-size: large;
+}
 footer{
   margin-top: 60px;
   text-align: center;
