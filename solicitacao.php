@@ -5,7 +5,7 @@
   require 'db/database.php';
 
   $tipo_servico = $_POST["tipo_servico"];
-  $servico = $_POST["servico"];  
+  $servico = $_POST["servico"];
 
   $table = "servico";
   $params = "WHERE nome = '$servico'";
@@ -17,8 +17,8 @@
       foreach ($array as $key2 => $value) {
         $valor = $value;
       }
-    } 
-
+    }
+  echo "<div id=\"container\">";
   echo "<br>Tipo: $tipo_servico<br>";
   echo "<br>Serviço: $servico<br>";
   echo "Valor: R$ ". number_format($valor, 2, ',', '.')."<br>";
@@ -31,5 +31,6 @@
 
   echo "<a href='solicitacao_form.php'>Voltar</a> ";
   echo "<a href='solicitacao_confirmada.php'>Confirmar</a>";
+  echo "</div>";
   include 'php/footer.php';
 ?>

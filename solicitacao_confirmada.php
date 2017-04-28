@@ -6,11 +6,11 @@
   $tipo_servico_nome = $_COOKIE['tipo_servico'];
   $servico_nome = $_COOKIE['servico'];
   $usuarioR = $_COOKIE['login'];
-  
+
   $status = "Aguardando";
   $valor = $_COOKIE['valor'];
   $numero = rand ( 1000 , 9999);
-  $data = time( );
+  $data = date('d-m-Y');
 
   $tableTipoServico = 'tipo_servico';
   $paramsTipoServico = "WHERE nome = '$tipo_servico_nome'";

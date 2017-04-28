@@ -4,16 +4,18 @@
 ?>
 <main id="container">
   <?php
-    if (isset($_GET['login'])){
-      $login = $_GET['login'];
+    session_start();
+    if ((!isset($_SESSION['login']) == true) and (!isset($_SESSION['senha'])==true)){
+      unset($_SESSION['login']);
+      unset($_SESSION['senha']);
+      header('location:index.php');
     }
     else{
-      $login = 'Usuário';
+      $login = $_SESSION['login'];
     }
     echo 'Olá '.$login;
     setcookie('login',$login, (time() + (2 * 3600 * 24)));
     echo "<br>";
-    echo "<a href='solicitacao_form.php' >Solicitar</a>";
     echo "<br>";
     include 'php/mostrar_solicitacoes.php';
   ?>

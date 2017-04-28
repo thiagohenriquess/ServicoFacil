@@ -23,7 +23,7 @@
 
   if($verifica){
     echo "<table>
-    <tr>
+      <tr>
         <th>numero</th>
         <th>tipo_servico_id</th>
         <th>status</th>
@@ -50,7 +50,7 @@
 
         echo "<td>$value</td>";
       }
-      echo "/<tr>";
+      echo "</tr>";
     }
     echo "</table>";
   }
