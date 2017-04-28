@@ -1,5 +1,7 @@
 <?php
 
+$nome = $_POST['nome'];
+$sobrenome = $_POST['sobrenome'];
 $login = $_POST['login'];
 $email = $login;
 $senha = md5($_POST['senha']);
@@ -8,20 +10,32 @@ $uid = uniqid( rand( ), true );
 $data_ts = time( );
 $ativo = 0;
 
+$tipo = $_POST['tipo'];
 require '../db/config.php';
 require '../db/connection.php';
 require '../db/database.php';
 
 $array = array(
   'login' => "$login",
+  'nome' => "$nome",
+  'sobrenome' => "$sobrenome",
   'senha' => "$senha",
   'uid'   => "$uid",
   'data_ts' => "$data_ts",
   'ativo' => "$ativo"
 );
 
+$table = 'usuario';
+$params = "WHERE login = '$login'";
+$verifica = DBRead($table, $params);
+
+if($verifica){
+  echo"<script language='javascript' type='text/javascript'>alert('Email já cadastrado');window.location.href='../cadastro_form.php';</script>";
+}
+
 if ($login == '' || $login == null) {
-    echo"<script language='javascript' type='text/javascript'>alert('O campo login deve ser preenchido');window.location.href='../cadastro_form.php';</script>";
+    echo"<script language='javascript' type='text/javascript'>alert('O campo login deve ser preenchido');</script>";
+    header("location:../cadastro_form.php?tipo=$tipo");
 } elseif ($senha != $senha2) {
     echo"<script language='javascript' type='text/javascript'>alert('As senhas não conferem, favor redigitar');window.location.href='../cadastro_form.php';</script>";
 } else {
