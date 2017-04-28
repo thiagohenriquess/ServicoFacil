@@ -20,6 +20,6 @@
   }else{
     $_SESSION['login'] = $login;
     $_SESSION['senha'] = $senha;
-    header("location:../painel.php?login='$login'");
+    header("location:../painel.php");
   }
 ?>
