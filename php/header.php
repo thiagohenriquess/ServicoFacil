@@ -16,7 +16,7 @@ echo'
         session_start();
         echo $_SESSION['login'];
         echo '<br>
-        <a href="php/logout.php">Logout</a>
+        <a href="logout.php">Logout</a>
         </div>
       </header>';
  ?>
