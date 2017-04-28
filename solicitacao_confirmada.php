@@ -4,9 +4,9 @@
   require 'db/database.php';
 
   $tipo_servico_nome = $_COOKIE['tipo_servico'];
+  $servico_nome = $_COOKIE['servico'];
   $usuarioR = $_COOKIE['login'];
-  echo $usuarioR;
-
+  
   $status = "Aguardando";
   $valor = $_COOKIE['valor'];
   $numero = rand ( 1000 , 9999);
@@ -22,7 +22,13 @@
   $fieldsUsuario = "usuario_id";
   $usuario = DBRead($tableUsuario, $paramsUsuario, $fieldsUsuario);
 
-  if($tipo_servico && $usuario){
+  $tableServico = 'servico';
+  $paramsServico = "WHERE nome = '$servico_nome'";
+  $fieldsServico = "servico_id";
+  $servico = DBRead($tableServico, $paramsServico, $fieldsServico);
+
+
+  if($tipo_servico && $usuario && $servico){
     foreach ($tipo_servico as $key => $array) {
       foreach ($array as $key2 => $value) {
         $tipo_servico_id = $value;
@@ -33,11 +39,17 @@
         $usuario_id = $value;
       }
     }
+    foreach ($servico as $key => $array) {
+      foreach ($array as $key2 => $value) {
+        $servico_id = $value;
+      }
+    }
     $array = array(
       'numero' =>  $numero,
       'valor' =>  $valor,
       'data_inicio'   => $data,
       'status' =>  $status,
+      'servico_id' => $servico_id,
       'tipo_servico_id' =>  $tipo_servico_id,
       'usuario_id' =>  $usuario_id
     );

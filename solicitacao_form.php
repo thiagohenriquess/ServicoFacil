@@ -20,6 +20,22 @@
     }
     ?>
   </select>
+  <br>
+  <select size=5 name="servico" id="servico">
+    <?php
+    $tableServico = "servico";
+    $fieldsServico = "nome";
+
+    $verificaServico = DBRead($tableServico, null, $fieldsServico);
+    sort($verifica);
+
+    foreach ($verificaServico as $key => $array) {
+      foreach ($array as $key2 => $value) {
+        echo "<option value='{$value}'>{$value}</option><br>";
+      }
+    } 
+    ?>
+  </select>
   <input type="submit" value="Entrar" name="entrar" id="entrar">
 
 </form>
