@@ -11,7 +11,9 @@ echo'
     </head>
     <body>
       <header id="titulo">
-        Serviço Fácil
+        <a href="/painel.php">
+          <img src="/imagens/icone.png" width="100" height="100">
+        </a>
         <div class="logout">';
         session_start();
         echo $_SESSION['login'];
