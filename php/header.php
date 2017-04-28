@@ -12,5 +12,11 @@ echo'
     <body>
       <header id="titulo">
         Serviço Fácil
+        <div class="logout">';
+        session_start();
+        echo $_SESSION['login'];
+        echo '<br>
+        <a href="php/logout.php">Logout</a>
+        </div>
       </header>';
  ?>
