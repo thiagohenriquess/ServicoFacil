@@ -18,7 +18,7 @@
   $tipo_servico = DBRead($tableTipoServico, $paramsTipoServico, $fieldsTipoServico);
 
   $tableUsuario = 'usuario';
-  $paramsUsuario = "WHERE login = ". $usuarioR;
+  $paramsUsuario = "WHERE login =  '$usuarioR'";
   $fieldsUsuario = "usuario_id";
   $usuario = DBRead($tableUsuario, $paramsUsuario, $fieldsUsuario);
 

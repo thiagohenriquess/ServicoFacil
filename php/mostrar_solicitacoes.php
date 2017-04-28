@@ -6,9 +6,10 @@
 
 
   $tableUsuario = 'usuario';
-  $paramsUsuario = "WHERE login = ". $login;
+  $paramsUsuario = "WHERE login = '$login'";
   $fieldsUsuario = "usuario_id";
   $usuario = DBRead($tableUsuario, $paramsUsuario, $fieldsUsuario);
+
 
   foreach ($usuario as $key => $array) {
     foreach ($array as $key2 => $value) {
@@ -16,10 +17,12 @@
     }
   }
 
+
   $table = 'solicitacao';
   $params = "WHERE usuario_id = ".$usuario_id;
   $fields = "numero, tipo_servico_id,status, data_inicio";
   $verifica = DBRead($table, $params, $fields);
+
 
   if($verifica){
     echo "<table>
@@ -53,5 +56,7 @@
       echo "</tr>";
     }
     echo "</table>";
+
+
   }
 ?>
