@@ -8,6 +8,8 @@ echo'
       <link rel="StyleSheet" type="text/css" href="css/reset.css">
       <link rel="StyleSheet" type="text/css" href="css/bootstrap.css">
       <link rel="StyleSheet" type="text/css" href="css/style.css">
+      <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+      <script type="text/javascript" src="js/funcao.js"></script>
     </head>
     <body>
       <header id="titulo">
@@ -16,7 +18,9 @@ echo'
         </a>
         <div class="logout">';
         session_start();
-        echo $_SESSION['login'];
+        if (isset($_SESSION['nome'])){
+        echo $_SESSION['nome'];
+        }
         echo '<br>
         <a href="/php/logout.php">Logout</a>
         </div>

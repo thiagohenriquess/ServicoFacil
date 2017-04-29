@@ -11,8 +11,10 @@
     }
     else{
       $login = $_SESSION['login'];
+      $nome = $_SESSION['nome'];
+      $sobrenome = $_SESSION['sobrenome'];
     }
-    echo 'Olá '.$login;
+    echo "Olá $nome $sobrenome";
     setcookie('login',$login, (time() + (2 * 3600 * 24)));
     echo "<br>";
     echo "<br>";
