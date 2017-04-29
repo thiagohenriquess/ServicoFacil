@@ -57,13 +57,13 @@
     $insert = DBInsert("solicitacao", $array);
 
     if($insert){
-      echo"<script language='javascript' type='text/javascript'>alert('Solicitacao gravada');</script>";
-      header("Location:./painel.php?login=$usuarioR");
+      echo"<script language='javascript' type='text/javascript'>alert('Solicitacao gravada');window.location.href='painel.php;</script>";
+      header("Location:./painel.php");
 
     }
     else {
       echo"<script language='javascript' type='text/javascript'>alert('não foi possivel solicitar');</script>";
-      header("Location:./painel.php?login=$login");
+      header("Location:./painel.php");
     }
 
   }
@@ -71,7 +71,7 @@
 
   else{
     echo"<script language='javascript' type='text/javascript'>alert('não foi possivel solicitar');</script>";
-    header("Location:./painel.php?login=$login");
+    header("Location:./painel.php");
 
   }
 

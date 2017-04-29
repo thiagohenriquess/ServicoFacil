@@ -25,6 +25,7 @@
       }
       ?>
       </select>
+      <br>
       <select size ='5' name="servico" id="servico" required>
         <option value='' disabled>Selecione o servico  </option>
         <?php

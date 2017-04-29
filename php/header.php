@@ -20,9 +20,11 @@ echo'
         session_start();
         if (isset($_SESSION['nome'])){
         echo $_SESSION['nome'];
-        }
+        
         echo '<br>
-        <a href="/php/logout.php">Logout</a>
+        <a href="/php/logout.php">Logout</a>';
+      }
+      echo '
         </div>
       </header>';
  ?>
