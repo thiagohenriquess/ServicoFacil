@@ -5,37 +5,32 @@
   require 'db/database.php';
 ?>
   <div id="container">
-    <form action="solicitacao.php" method="post">
+    <form action="solicitacao.php" method="post" enctype="multipart/form-data">
       <select name="tipo_servico" id="tipo_servico" required>
     <?php
       $table = "tipo_servico";
-      $fields = "nome";
+      $fields = "tipo_servico_id, nome";
 
       $verifica = DBRead($table, null, $fields);
       sort($verifica);
 
-      echo "<option value=''>Selecione Tipo do servidor</option><br>";
+      echo "<option value='' disabled selected>Selecione Tipo do servidor</option><br>";
       foreach ($verifica as $key => $array) {
-        foreach ($array as $key2 => $value) {
-          echo "<option value='{$value}'>{$value}</option><br>";
-        }
+
+        $tipo_servico_id = $array['tipo_servico_id'];
+        $tipo_servico_nome = $array['nome'];
+
+        echo "<option value='{$tipo_servico_id}'>{$tipo_servico_nome}</option><br>";
+
       }
       ?>
       </select>
-      <br>
-      <select size=5 name="servico" id="servico" required>
+      <select size ='5' name="servico" id="servico" required>
+        <option value='' disabled>Selecione o servico  </option>
         <?php
-        $tableServico = "servico";
-        $fieldsServico = "nome";
-        $verificaServico = DBRead($tableServico, null, $fieldsServico);
-        sort($verifica);
+        //  echo "<option value='{$value}'>{$value}</option><br>";
 
-        foreach ($verificaServico as $key => $array) {
-          foreach ($array as $key2 => $value) {
-            echo "<option value='{$value}'>{$value}</option><br>";
-          }
-        }
-      ?>
+          ?>
     </select>
     <br>
     <input type="submit" value="Entrar" name="entrar" id="entrar">

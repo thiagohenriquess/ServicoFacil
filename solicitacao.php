@@ -4,20 +4,28 @@
   require 'db/connection.php';
   require 'db/database.php';
 
-  $tipo_servico = $_POST["tipo_servico"];
-  $servico = $_POST["servico"];
+  $tipo_servico_id = $_POST["tipo_servico"];
+  $servico_id = $_POST["servico"];
 
   $table = "servico";
-  $params = "WHERE nome = '$servico'";
-  $fields = "valor";
-
+  $params = "WHERE servico_id = '$servico_id'";
+  $fields = "nome, valor";
   $verifica = DBRead($table, $params, $fields);
 
   foreach ($verifica as $key => $array) {
-      foreach ($array as $key2 => $value) {
-        $valor = $value;
-      }
-    }
+    $valor = $array['valor'];
+    $servico = $array['nome'];
+  }
+
+  $tableTS = "tipo_servico";
+  $paramsTS = "WHERE tipo_servico_id = '$tipo_servico_id'";
+  $fieldsTS = "nome";
+  $verificaTS = DBRead($tableTS, $paramsTS, $fieldsTS);
+
+  foreach ($verificaTS as $keyTS => $arrayTS) {
+    $tipo_servico = $arrayTS['nome'];
+  }
+
   echo "<div id=\"container\">";
   echo "<br>Tipo: $tipo_servico<br>";
   echo "<br>Serviço: $servico<br>";
